@@ -1,0 +1,25 @@
+{
+  "name": "teamprofilegenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyleeThomas/TeamProfileGenerator.git"
+  },
+  "author": "Rylee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyleeThomas/TeamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/RyleeThomas/TeamProfileGenerator#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}
