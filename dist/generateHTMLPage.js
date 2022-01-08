@@ -3,20 +3,20 @@
     if(memberObject.getRole() == "Engineer"){
         return `
                                 <p>GitHub Account:<a href="https://github.com/${memberObject.getGithub()}" class="btn btn-link">${memberObject.getGithub()}</a></p>
-        `;
+        `
     }
     if(memberObject.getRole() == "Intern"){
         return `
-                               <p>School Attending:${memberObject.getSchool()}</p>
-        `;
+                               <p>School Attending: ${memberObject.getSchool()}</p>
+        `
     }
     if(memberObject.getRole() == "Manager"){
         return `
-                               <p>Office Number:${memberObject.office}</p>
-        `;
+                               <p>Office Number: ${memberObject.office}</p>
+        `
     }
     if(memberObject.getRole() == "Employee"){
-        return `''`;
+        return `''`
     }
  };
 
@@ -31,7 +31,7 @@ const generateCard = teamArr => {
                             <div class="panel-body">
                                 <p>ID: ${member.getId()}</p>
                                 <p>Email:<a href="mailto:${member.getEmail()}" class="btn btn-link">${member.getEmail()}</a></p>
-                                ${employeeType(member)};
+                                ${employeeType(member)}
                             </div> 
                         </div>
     `;
@@ -60,7 +60,7 @@ const generatePage = teamArr => {
   
         <body>
             <header class="well-lg text-center" style="background-color:rgb(176, 181, 196)">
-                <h1>Team Members</h1>
+                <h1>Team Roster</h1>
             </header>
             <section class="container" style="padding: 20px">
                 <div class="justify-space-between">
