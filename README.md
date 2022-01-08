@@ -5,6 +5,7 @@
   ## Description 
   As a manager, I want to generate a webpage that displays my team's basic info so that I have quick access to their information. This is a command-line applicatio that accepts user
   input when prompted. When teammembers information is input, than an HTML file is generated that displays the roster using boostrap. 
+  [Link to Demo Webpage](https://ryleethomas.github.io/TeamProfileGenerator/dist/index.html)
 
   ## Table of Contents 
   * [Installation](#installation)
