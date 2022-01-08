@@ -7,6 +7,8 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 
+const teamList = [];
+
 promptEmployee = function(){
     inquirer
         .prompt([
@@ -70,6 +72,7 @@ promptEmployee = function(){
             if(position == 'Other'){
                 const employee = new Employee(name,id,email);
                 console.log('Employee added!');
+                teamList.push(employee);
                 addAnotherEmployee();
             }
         })
@@ -94,6 +97,7 @@ promptManager = function(name,id,email){
         .then(({office}) => {
             const manager = new Manager(name,id,email,office);
             console.log('Manager added!');
+            teamList.push(manager);
             addAnotherEmployee();
         });
 };
@@ -104,12 +108,12 @@ promptEngineer = function(name,id,email){
         {
             type: 'text',
             name: 'github',
-            message: 'What is the Engineers github? (Required)',
+            message: 'What is the Engineers github username? (Required)',
             validate: nameInput => {
                 if (nameInput){
                     return true;
                 } else {
-                    console.log('Please enter Engineers github');
+                    console.log('Please enter Engineers github username');
                     return false;
                 }
             }
@@ -117,6 +121,7 @@ promptEngineer = function(name,id,email){
         .then(({github}) => {
             const eng = new Engineer(name,id,email,github);
             console.log('Engineer added!');
+            teamList.push(eng);
             addAnotherEmployee();
         });
 };
@@ -140,6 +145,7 @@ promptIntern = function(name,id,email){
         .then(({school}) => {
             const int = new Intern(name,id,email,school);
             console.log('Intern added!');
+            teamList.push(int);
             addAnotherEmployee();
         });
 };
@@ -155,7 +161,15 @@ addAnotherEmployee = function() {
             if(addAnother){
                 promptEmployee();
             }
+            else{
+                const pageHTML = generatePage(teamList);
+                fs.writeFile('./dist/index.html', pageHTML, err => {
+                    if(err) throw new Error(err);
+                    console.log('Page Created!');
+                })
+            }
         })
 }
 
 promptEmployee();
+
