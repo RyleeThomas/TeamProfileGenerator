@@ -1,4 +1,4 @@
-# TeamProfileGenerator
+# Team Profile Generator Challenge
 
   ![License](https://img.shields.io/badge/License-GNU_AGPLv3-blue.svg)
 
